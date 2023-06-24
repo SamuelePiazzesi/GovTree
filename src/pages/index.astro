@@ -1,0 +1,51 @@
+---
+import Dialog from '../components/Dialog.svelte';
+import Link from '../components/Link.svelte';
+import { links, siteConfig } from '../config';
+import Layout from '../layouts/Layout.astro';
+
+
+---
+<Layout title={siteConfig.title}>
+	<main>
+		<ul>
+			{
+				links.map((l) => (
+					<Link link={l} client:load  />
+				))
+			}
+		</ul>
+
+	
+
+	</main>
+
+	<Dialog client:load />
+</Layout>
+
+<style>
+	main {
+		height: 100%;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 1.5rem;
+		max-width: 70ch;
+		text-align: center;
+		flex: 1 1 auto;
+	}
+	ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+	flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+	gap: 1.5rem;
+}
+
+
+</style>
