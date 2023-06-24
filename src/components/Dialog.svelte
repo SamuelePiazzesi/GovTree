@@ -128,7 +128,7 @@ on:click|self={closeModal}
 	li {
 		-webkit-box-align: center;
     align-items: center;
-    padding: 1rem 0;
+    
 		border-radius: 0.5rem;
     color: var(--color-text);
     width: 100%;
@@ -150,6 +150,7 @@ on:click|self={closeModal}
 		color: var(--color-black);
 		font-weight: 600;
 		cursor: pointer;
+		padding: 1rem 0;
 	}
 
 	a span {

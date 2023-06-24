@@ -15,47 +15,36 @@
 
 <style>
 	li {
-  display: inline;
+  display: flex;
+	align-items: center;
+	gap: 0.5rem;
   list-style-type: none;
   width: 100%;
-	border: 1px solid var(--color-text);
-	border-radius: 30px;
 	color: var(--color-text);
 	background-color: var(--color-primary);
 	position:relative;
+	border-radius: 30px;
+	cursor: pointer;
 }
 
 button {
 	background-color: transparent;
 	border:none;
-	color: var(--color-primary);
-	height: 40px;
-  width: 40px;
+	color: var(--color-text);
+	min-height: 40px;
+  min-width: 40px;
   -webkit-box-pack: center;
   justify-content: center;
   -webkit-box-align: center;
+	background-color: rgba(0, 102, 204, 0.2);
   align-items: center;
   z-index: 10;
 	right: 0.5rem;
-  position: absolute;
   top: 50%;
   overflow: hidden;
   border-radius: 50%;
 	cursor: pointer;
 	transition: all 120ms ease-out 0s;
-}
-
-
-li:is(:hover, :focus-within) {
-	background-color: var(--color-text);
-	color: var(--color-primary);
-	transition: box-shadow 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, transform 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
-}
-
-li:is(:hover, :focus-within) button {
-	transform: translateY(-50%);
-  pointer-events: auto;
-	opacity: 1;
 }
 
 a {
@@ -67,6 +56,9 @@ a {
 	text-decoration: none;
 	color: inherit;
 	font-weight: 600;
+	border: 1px solid var(--color-text);
+	border-radius: 30px;
+	flex: 1 1 auto;
 }
 
 @media (min-width: 768px) {
@@ -75,12 +67,24 @@ a {
 	}
 
 	button {
+		position: absolute;
 		opacity: 0;
 	}
 
-	button:is(:hover, :focus-within){
-	background-color: rgba(0, 102, 204, 0.2);
+	li:is(:hover, :focus-within) button {
+	background-color: rgba(0, 102, 204, 0.6);
+	transform: translateY(-50%);
+  pointer-events: auto;
+	opacity: 1;
 	}
+
+	li:is(:hover, :focus-within) {
+	background-color: var(--color-text);
+	color: var(--color-primary);
+	transition: box-shadow 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, transform 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
+	}
+
+
 
 }
 </style>
