@@ -1,23 +1,15 @@
 ---
-import Dialog from '../components/Dialog.svelte';
-import Link from '../components/Link.svelte';
-import { links, siteConfig } from '../config';
-import Layout from '../layouts/Layout.astro';
-
-
+import Dialog from "../components/Dialog.svelte";
+import Link from "../components/Link.svelte";
+import { links, siteConfig } from "../config";
+import Layout from "../layouts/Layout.astro";
 ---
+
 <Layout title={siteConfig.title}>
 	<main>
 		<ul>
-			{
-				links.map((l) => (
-					<Link link={l} client:load  />
-				))
-			}
+			{links.map((l) => <Link link={l} client:load />)}
 		</ul>
-
-	
-
 	</main>
 
 	<Dialog client:load />
@@ -36,16 +28,14 @@ import Layout from '../layouts/Layout.astro';
 		flex: 1 1 auto;
 	}
 	ul {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-	flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-	gap: 1.5rem;
-}
-
-
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: stretch;
+		gap: 1.5rem;
+	}
 </style>

@@ -1,6 +1,3 @@
-
-
-
 <script>
 import { getSharedLinks, selectedLink, unSelectLink } from '../stores';
 let dialog;
@@ -41,7 +38,7 @@ on:click|self={closeModal}
 					<a href={shareLink.href} target="_blank">
 						<span>
 							<img src={shareLink.icon} alt="" />
-							Condividi su {shareLink?.name}
+						Condividi su {shareLink?.name}
 						</span>
 						
 

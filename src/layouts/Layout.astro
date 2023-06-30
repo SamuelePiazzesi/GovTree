@@ -1,7 +1,7 @@
 ---
-import { SEO } from 'astro-seo';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import { SEO } from "astro-seo";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 export interface Props {
 	title: string;
 }
@@ -13,32 +13,34 @@ const { title } = Astro.props;
 <html lang="it">
 	<head>
 		<SEO
-			charset='UTF-8'
-      title="GovTree"
-      description="Una lista di siti web di servizi pubblici italiani"
-      openGraph={{
-        basic: {
-          title: "Una lista di siti web di servizi pubblici italiani",
-          type: "A type.",
-          image: "/og.jpg",
-        }
-      }}
-      twitter={{
-        creator: "@sam_piazzesi"
-      }}
-      extend={{
-        link: [{ rel: "icon", href: "/favicon.svg" }],
-       
-        meta: [
-          {
-            name: "twitter:image",
-            content: "/og.jpg",
-          },
-          { name: "twitter:title", content: "GovTree" },
-          { name: "twitter:description", content: "Una lista di siti web di servizi pubblici italiani" },
-        ],
-      }}
-    />
+			charset="UTF-8"
+			title="GovTree"
+			description="Una lista di siti web di servizi pubblici italiani"
+			openGraph={{
+				basic: {
+					title: "Una lista di siti web di servizi pubblici italiani",
+					type: "A type.",
+					image: "/og.jpg",
+				},
+			}}
+			twitter={{
+				creator: "@sam_piazzesi",
+			}}
+			extend={{
+				link: [{ rel: "icon", href: "/favicon.svg" }],
+				meta: [
+					{
+						name: "twitter:image",
+						content: "/og.jpg",
+					},
+					{ name: "twitter:title", content: "GovTree" },
+					{
+						name: "twitter:description",
+						content: "Una lista di siti web di servizi pubblici italiani",
+					},
+				],
+			}}
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -46,27 +48,26 @@ const { title } = Astro.props;
 		<Header />
 		<slot />
 		<Footer />
+		<style is:global>
+			@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap");
+
+			:root {
+				--color-primary: rgb(0, 102, 204);
+				--color-text: #fff;
+				--color-black: #000;
+			}
+			html {
+				font-family: "montserrat", system-ui, sans-serif;
+				background-color: var(--color-primary);
+			}
+
+			body {
+				margin: 0;
+				color: var(--color-text);
+				min-height: 100dvh;
+				display: flex;
+				flex-direction: column;
+			}
+		</style>
 	</body>
 </html>
-<style is:global>
-	@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap');
-	
-	:root {
-		--color-primary: rgb(0, 102, 204);
-		--color-text: #FFF;
-		--color-black: #000;
-
-	}
-	html {
-		font-family: 'montserrat', system-ui, sans-serif;
-		background-color: var(--color-primary);
-	}
-
-	body {
-		margin: 0;
-		color: var(--color-text);
-		min-height: 100dvh;
-		display: flex;
-		flex-direction: column;
-	}
-</style>
