@@ -1,8 +1,11 @@
 ---
+import { inject } from "@vercel/analytics";
 import Dialog from "../components/Dialog.svelte";
 import Link from "../components/Link.svelte";
 import { links, siteConfig } from "../config";
 import Layout from "../layouts/Layout.astro";
+
+inject();
 ---
 
 <Layout title={siteConfig.title}>
